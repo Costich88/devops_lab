@@ -14,15 +14,15 @@ def paintersquare(filename):
             array = [row.strip() for row in file]
 
         ps = array[0]
-        square = fint(ps)[0]*fint(ps)[1]
+        square = fint(ps)[0] * fint(ps)[1]
 
         n = fint(array[1])[0]
 
         sarr = [[0 for j in range(fint(ps)[0])] for i in range(fint(ps)[1])]
 
         for i in range(n):
-            for j in range(fint(array[i+2])[0], fint(array[i+2])[2]):
-                for k in range(fint(array[i+2])[1], fint(array[i+2])[3]):
+            for j in range(fint(array[i + 2])[0], fint(array[i + 2])[2]):
+                for k in range(fint(array[i + 2])[1], fint(array[i + 2])[3]):
                                 sarr[j][k] = 1
 
         sum = 0

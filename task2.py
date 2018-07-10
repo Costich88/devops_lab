@@ -7,9 +7,9 @@ def palindrome(string):
 
         pal = True
 
-        for i in range(len(string)//2):
+        for i in range(len(string) // 2):
 
-                if string[i] != string[len(string)-i-1]:
+                if string[i] != string[len(string) - i - 1]:
 
                         pal = False
                         break
