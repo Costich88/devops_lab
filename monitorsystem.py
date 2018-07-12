@@ -84,7 +84,6 @@ def log(logformat):
 
                 dictupt()
                 outtxt()
-                counter += 1
 
         elif logformat == "json":
 
@@ -93,7 +92,6 @@ def log(logformat):
                 print(jOut, file=open("output.json", "a"))
 
         else:
-
                 print("Incorrect output format")
 
 
@@ -105,4 +103,5 @@ with open("conf.json") as lines:
 
 while os.path.exists("conf.json"):
         log(logformat)
+        counter += 1
         sleep(sleeptime)
