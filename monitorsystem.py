@@ -8,8 +8,6 @@ import psutil
 from time import sleep
 
 counter = 1
-line_width = 44
-output = ""
 
 dict = {'SNAPSHOT ': counter,
         'DATE': "timedate",
@@ -73,7 +71,7 @@ def outtxt():
               'Space Usage', 'RAM Usage', 'Bytes Read', 'Bytes Written',
               'Traffic', sep="".ljust(10), file=open("output.txt", "a"))
 
-        print("".ljust(line_width), dict['CPU'], dict['Space Usage'],
+        print("".ljust(44), dict['CPU'], dict['Space Usage'],
               dict['RAM Usage'], dict['Bytes Read'], dict['Bytes Write'],
               dict['Traffic'], sep="".ljust(13), file=open("output.txt", "a"))
 
