@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
-from abc import abstractmethod, ABC
+from abc import abstractmethod
+from abc import ABC
 from datetime import datetime
 import psutil
 
@@ -46,9 +47,8 @@ class FileOut(ABC):
         def getNET(self):
                 self.s = format((psutil.net_io_counters().bytes_sent / 2**20))
                 self.r = format((psutil.net_io_counters().bytes_recv / 2**20))
-                self.traffic = format(
-                                     float(self.s) +
-                                     float(self.r), '.2f') + ' MB'
+                self.traffic = format(float(self.s) +
+                                      float(self.r), '.2f') + ' MB'
                 return self.traffic
 
         def getDATE(self):
