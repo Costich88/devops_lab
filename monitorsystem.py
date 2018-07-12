@@ -10,13 +10,13 @@ from time import sleep
 counter = 1
 
 dictValues = {'SNAPSHOT ': counter,
-        'DATE': "timedate",
-        'CPU': "0",
-        'Space Usage': "0",
-        'RAM Usage': "0",
-        'Bytes Read': "0",
-        'Bytes Write': "0",
-        'Traffic': "0"}
+             'DATE': "timedate",
+             'CPU': "0",
+             'Space Usage': "0",
+             'RAM Usage': "0",
+             'Bytes Read': "0",
+             'Bytes Write': "0",
+             'Traffic': "0"}
 
 
 def getCPU():
