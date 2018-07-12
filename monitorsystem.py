@@ -9,7 +9,7 @@ from time import sleep
 
 counter = 1
 
-dict = {'SNAPSHOT ': counter,
+dictValues = {'SNAPSHOT ': counter,
         'DATE': "timedate",
         'CPU': "0",
         'Space Usage': "0",
@@ -54,26 +54,26 @@ def getDATE():
 
 def dictupt():
         read, write = getIO()
-        dict['SNAPSHOT'] = str(counter)
-        dict['DATE'] = getDATE()
-        dict['CPU'] = getCPU()
-        dict['Space Usage'] = getSPACE()
-        dict['RAM Usage'] = getMEM()
-        dict['Bytes Read'] = read
-        dict['Bytes Write'] = write
-        dict['Traffic'] = getNET()
+        dictValues['SNAPSHOT'] = str(counter)
+        dictValues['DATE'] = getDATE()
+        dictValues['CPU'] = getCPU()
+        dictValues['Space Usage'] = getSPACE()
+        dictValues['RAM Usage'] = getMEM()
+        dictValues['Bytes Read'] = read
+        dictValues['Bytes Write'] = write
+        dictValues['Traffic'] = getNET()
 
 
 def outtxt():
 
         print("SNAPSHOT {counter}: TIMESTAMP : {date}".format
-              (counter=dict['SNAPSHOT'], date=dict['DATE']), 'CPU load',
+              (counter=dictValues['SNAPSHOT'], date=dictValues['DATE']), 'CPU load',
               'Space Usage', 'RAM Usage', 'Bytes Read', 'Bytes Written',
               'Traffic', sep="".ljust(10), file=open("output.txt", "a"))
 
-        print("".ljust(44), dict['CPU'], dict['Space Usage'],
-              dict['RAM Usage'], dict['Bytes Read'], dict['Bytes Write'],
-              dict['Traffic'], sep="".ljust(13), file=open("output.txt", "a"))
+        print("".ljust(44), dictValues['CPU'], dictValues['Space Usage'],
+              dictValues['RAM Usage'], dictValues['Bytes Read'], dictValues['Bytes Write'],
+              dictValues['Traffic'], sep="".ljust(13), file=open("output.txt", "a"))
 
 
 def log(logformat):
@@ -88,7 +88,7 @@ def log(logformat):
         elif logformat == "json":
 
                 dictupt()
-                jOut = json.dumps(dict)
+                jOut = json.dumps(dictValues)
                 print(jOut, file=open("output.json", "a"))
 
         else:
