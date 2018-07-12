@@ -2,26 +2,23 @@
 # python app which would monitor the your system/server
 
 from datetime import datetime
-from time import sleep
-import psutil
 import json
 import os.path
-
+import psutil
+from time import sleep
 
 counter = 1
 line_width = 44
 output = ""
 
-dict = {
-        'SNAPSHOT ': counter,
+dict = {'SNAPSHOT ': counter,
         'DATE': "timedate",
         'CPU': "0",
         'Space Usage': "0",
         'RAM Usage': "0",
         'Bytes Read': "0",
         'Bytes Write': "0",
-        'Traffic': "0",
-        }
+        'Traffic': "0"}
 
 
 def getCPU():
