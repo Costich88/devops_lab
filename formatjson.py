@@ -10,4 +10,4 @@ class FormJson(fileout.FileOut):
                 self.dictVlupt()
                 dictVl = self.dictVl
                 jOut = json.dumps(dictVl)
-                print(jOut, file=open(self.filename+".json", "a"))
+                print(jOut, file=open(self.filename + ".json", "a"))
