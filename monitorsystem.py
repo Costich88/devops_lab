@@ -69,7 +69,7 @@ def outtxt():
         print("SNAPSHOT {counter}: TIMESTAMP : {date}".format
               (counter=dictValues['SNAPSHOT'], date=dictValues['DATE']),
               'CPU load', 'Space Usage', 'RAM Usage', 'Bytes Read',
-              'Bytes Written','Traffic', sep="".ljust(10),
+              'Bytes Written', 'Traffic', sep="".ljust(10),
               file=open("output.txt", "a"))
 
         print("".ljust(44), dictValues['CPU'], dictValues['Space Usage'],
