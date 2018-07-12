@@ -10,13 +10,13 @@ from time import sleep
 counter = 1
 
 dictValues = {'SNAPSHOT ': counter,
-             'DATE': "timedate",
-             'CPU': "0",
-             'Space Usage': "0",
-             'RAM Usage': "0",
-             'Bytes Read': "0",
-             'Bytes Write': "0",
-             'Traffic': "0"}
+              'DATE': "timedate",
+              'CPU': "0",
+              'Space Usage': "0",
+              'RAM Usage': "0",
+              'Bytes Read': "0",
+              'Bytes Write': "0",
+              'Traffic': "0"}
 
 
 def getCPU():
@@ -67,13 +67,15 @@ def dictupt():
 def outtxt():
 
         print("SNAPSHOT {counter}: TIMESTAMP : {date}".format
-              (counter=dictValues['SNAPSHOT'], date=dictValues['DATE']), 'CPU load',
-              'Space Usage', 'RAM Usage', 'Bytes Read', 'Bytes Written',
-              'Traffic', sep="".ljust(10), file=open("output.txt", "a"))
+              (counter=dictValues['SNAPSHOT'], date=dictValues['DATE']),
+              'CPU load', 'Space Usage', 'RAM Usage', 'Bytes Read',
+              'Bytes Written','Traffic', sep="".ljust(10),
+              file=open("output.txt", "a"))
 
         print("".ljust(44), dictValues['CPU'], dictValues['Space Usage'],
-              dictValues['RAM Usage'], dictValues['Bytes Read'], dictValues['Bytes Write'],
-              dictValues['Traffic'], sep="".ljust(13), file=open("output.txt", "a"))
+              dictValues['RAM Usage'], dictValues['Bytes Read'],
+              dictValues['Bytes Write'], dictValues['Traffic'],
+              sep="".ljust(13), file=open("output.txt", "a"))
 
 
 def log(logformat):
