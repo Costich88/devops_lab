@@ -114,23 +114,25 @@ def get_pull():
 
     else:
         print("Invalid input")
-
+  
 
 def main():
 
     arg = get_arg()
     get_data(arg['user'], arg['repo'])
+    func_dict = {
+        'd': 'get_days_opened()',
+        'c': 'get_creator()',
+        't': 'get_creation_time()',
+        'p': 'get_pull()',
+        'w': 'get_ow()'
+        }
 
-    if arg['d']:
-        get_days_opened()
-    if arg['c']:
-        get_creator()
-    if arg['t']:
-        get_creation_time()
-    if arg['p']:
-        get_pull()
-    if arg['w']:
-        get_ow()
+    for i, j in arg.items():
+
+        if j == True:
+
+            exec(func_dict[i])
 
 
 main()
