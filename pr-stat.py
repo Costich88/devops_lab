@@ -114,7 +114,7 @@ def get_pull():
 
     else:
         print("Invalid input")
-  
+
 
 def main():
 
@@ -126,11 +126,11 @@ def main():
         't': 'get_creation_time()',
         'p': 'get_pull()',
         'w': 'get_ow()'
-        }
+    }
 
     for i, j in arg.items():
 
-        if j == True:
+        if j is True:
 
             exec(func_dict[i])
 
