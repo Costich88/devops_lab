@@ -5,11 +5,10 @@ from abc import abstractmethod
 from datetime import datetime
 import psutil
 
-counter = 1
-
 
 class FileOut(ABC):
-        global counter
+        
+        counter = 1
 
         def __init__(self, filename):
                 self.filename = filename
@@ -58,7 +57,7 @@ class FileOut(ABC):
 
         def dictVlupt(self):
                 self.read, self.write = self.getIO()
-                self.dictVl['SNAPSHOT'] = str(counter)
+                self.dictVl['SNAPSHOT'] = str(self.counter)
                 self.dictVl['DATE'] = self.getDATE()
                 self.dictVl['CPU'] = self.getCPU()
                 self.dictVl['Space Usage'] = self.getSPACE()
