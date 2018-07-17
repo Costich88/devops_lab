@@ -43,5 +43,5 @@ with open("conf.json") as lines:
 
 while os.path.exists("conf.json"):
         log(logformat)
-        fileout.counter += 1
+        fileout.FileOut.counter += 1
         sleep(sleeptime)
