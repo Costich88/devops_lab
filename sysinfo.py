@@ -75,16 +75,15 @@ def get_site_packages(package_name):
 for j in get_packages():
     get_site_packages(j)
 
-output = {
-        'py_version': get_version(),
-        'virt_env': get_ve(),
-        'py_exe_loc': get_exe(),
-        'pip_location': get_pip(),
-        'pythonpath': get_path(),
-        'pip_packages': get_packages(),
-        'web_packages': sitepack,
+output = {'py_version': get_version(),
+          'virt_env': get_ve(),
+          'py_exe_loc': get_exe(),
+          'pip_location': get_pip(),
+          'pythonpath': get_path(),
+          'pip_packages': get_packages(),
+          'web_packages': sitepack, }
         # 'python_versions': get_versions()
-    }
+
 
 jout()
 yout()
