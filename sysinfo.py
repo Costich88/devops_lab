@@ -16,7 +16,7 @@ def yout():
 
 def shell_com(command):
     p = subprocess.Popen(command.split(),
-                     stdout=subprocess.PIPE)
+                         stdout=subprocess.PIPE)
     preprocessed, _ = p.communicate()
     return preprocessed
 
@@ -53,8 +53,8 @@ def get_path():
 def get_packages():
     r = str(shell_com('pip list'))[1:]
     r = r.split(r'\n')
-    
-    del r[0:2],r[-1]
+
+    del r[0:2], r[-1]
     for i in range(len(r)):
         r[i] = r[i].split()[0]
     return r
@@ -62,7 +62,7 @@ def get_packages():
 
 sitepack = {}
 
- 
+
 def get_site_packages(package_name):
     # com = (f'pip show {package_name} --verbose | grep Home-page')
     com = 'pip show {} --verbose | grep Home-page'.format(package_name)
@@ -70,7 +70,7 @@ def get_site_packages(package_name):
                          stdout=subprocess.PIPE)
     preprocessed, _ = p.communicate()
     sitepack[package_name] = str(preprocessed)[13:-3]
-                                                     
+
 
 for j in get_packages():
     get_site_packages(j)
@@ -84,7 +84,7 @@ output = {
         'pip_packages': get_packages(),
         'web_packages': sitepack,
         # 'python_versions': get_versions()
-    }  
+    }
 
-jout() 
+jout()
 yout()
