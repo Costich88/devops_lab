@@ -82,7 +82,6 @@ output = {'py_version': get_version(),
           'pythonpath': get_path(),
           'pip_packages': get_packages(),
           'web_packages': sitepack, }
-        # 'python_versions': get_versions()
 
 
 jout()
