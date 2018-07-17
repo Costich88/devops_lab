@@ -7,7 +7,7 @@ import psutil
 
 
 class FileOut(ABC):
-        
+
         counter = 1
 
         def __init__(self, filename):
