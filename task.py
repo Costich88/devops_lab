@@ -8,28 +8,51 @@ def fint(str):
         return [int(s) for s in str.split()]
 
 
-def paintersquare():
+def findsquare(width, lengh):
 
-        ps = input('Input default sizes:\n')
-        square = fint(ps)[0] * fint(ps)[1]
+        return width * lengh
 
-        n = int(input('Input number of rectangles:\n'))
 
-        sarr = [[0 for j in range(fint(ps)[0])] for i in range(fint(ps)[1])]
+def squarearray(width, lengh):
 
-        for i in range(n):
-            psn = input('Input points of rectangle {0}:\n'.format(i + 1))
-            for j in range(fint(psn)[0], fint(psn)[2]):
-                for k in range(fint(psn)[1], fint(psn)[3]):
-                    sarr[j][k] = 1
+        return [[0 for j in range(lengh)] for i in range(width)]
 
-        sum = 0
+
+def cutsqaure(point1, point2, point3, point4, sarr):
+
+        for j in range(point1, point3):
+
+                for k in range(point2, point4):
+
+                        sarr[j][k] = 1
+
+        return sarr
+
+
+def totcutted(sarr):
+
+        total = 0
 
         for arr in sarr:
                 for el in arr:
-                        sum += el
-        square -= sum
+                        total += el
+
+        return total
+
+
+def paintersquare(ps, pnts):
+
+        square = findsquare(fint(ps)[0], fint(ps)[1])
+
+        sarr = squarearray((fint(ps)[0]), (fint(ps)[1]))
+
+        for strval in pnts:
+            cutsqaure(fint(strval)[0], fint(strval)[1],
+                      fint(strval)[2], fint(strval)[3], sarr)
+
+        total = totcutted(sarr)
+        square -= total
         return square
 
 
-print(paintersquare())
+print(paintersquare('5 5', ['1 1 3 3', '2 2 4 4']))

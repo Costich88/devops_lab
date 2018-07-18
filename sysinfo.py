@@ -6,12 +6,12 @@ import yaml
 
 def jout():
     jOut = json.dumps(output)
-    print(jOut, file=open("output.json", "a"))
+    print(jOut, file=open("./output/output.json", "a"))
 
 
 def yout():
     yOut = yaml.dump(output)
-    print(yOut, file=open("output.yaml", "a"))
+    print(yOut, file=open("./output/output.yaml", "a"))
 
 
 def shell_com(command):
@@ -38,11 +38,13 @@ def get_pip():
 
 
 def get_versions():
-    return str(shell_com('pyenv versions'))[2:-3]
+    py_vers = (str(shell_com('pyenv versions'))[2:-3]).split(r'\n')
+    for i in range(len(py_vers)):
+        py_vers[i] = py_vers[i].strip()
+    return py_vers
 
 
 def get_path():
-    # return(str(shell_com('echo $PYTHONPATH'))[2:-3])
     com = 'echo $PYTHONPATH'
     p = subprocess.Popen(com, shell=True,
                          stdout=subprocess.PIPE)
@@ -81,8 +83,11 @@ output = {'py_version': get_version(),
           'pip_location': get_pip(),
           'pythonpath': get_path(),
           'pip_packages': get_packages(),
-          'web_packages': sitepack, }
+          'web_packages': sitepack,
+          'py_installed_versions': get_versions()}
 
+if not os.path.exists('./output/'):
+    os.makedirs('./output/')
 
 jout()
 yout()
